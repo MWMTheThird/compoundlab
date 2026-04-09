@@ -93,12 +93,14 @@ function drawChart(canvasId, data) {
  ctx.stroke();
 }
 
-  // Final point
-  const lastPoint = points[points.length - 1];
-  ctx.beginPath();
-  ctx.arc(lastPoint.x, lastPoint.y, 5, 0, Math.PI * 2);
-  ctx.fillStyle = "#0f766e";
-  ctx.fill();
+ctx.stroke();
+
+// Final point
+const lastPoint = points[points.length - 1];
+ctx.beginPath();
+ctx.arc(lastPoint.x, lastPoint.y, 5, 0, Math.PI * 2);
+ctx.fillStyle = "#0f766e";
+ctx.fill();
 }
 
 function updateCalculator(prefix, mode = "growth") {
