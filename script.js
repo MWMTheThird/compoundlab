@@ -220,13 +220,24 @@ initCalculatorPage("compound");
 initIsaCalculator();
 
 function updateFIRE() {
- const savings = parseFloat(document.getElementById("savings").value) || 0;
- const monthly = parseFloat(document.getElementById("monthly").value) || 0;
- const expenses = parseFloat(document.getElementById("expenses").value) || 0;
- const rate = (parseFloat(document.getElementById("rate").value) || 0) / 100;
- const withdrawalRate = (parseFloat(document.getElementById("withdrawal-rate").value) || 4) / 100;
- const currentAge = parseFloat(document.getElementById("current-age").value) || 30;
- const targetAge = parseFloat(document.getElementById("target-age").value) || 55;
+const savingsEl = document.getElementById("savings");
+const monthlyEl = document.getElementById("monthly");
+const expensesEl = document.getElementById("expenses");
+const rateEl = document.getElementById("rate");
+const withdrawalRateEl = document.getElementById("withdrawal-rate");
+const currentAgeEl = document.getElementById("current-age");
+const targetAgeEl = document.getElementById("target-age");
+
+// ✅ STOP if page is not FIRE page
+if (!savingsEl || !monthlyEl || !expensesEl) return;
+
+const savings = parseFloat(savingsEl.value) || 0;
+const monthly = parseFloat(monthlyEl.value) || 0;
+const expenses = parseFloat(expensesEl.value) || 0;
+const rate = (parseFloat(rateEl?.value) || 0) / 100;
+const withdrawalRate = (parseFloat(withdrawalRateEl?.value) || 4) / 100;
+const currentAge = parseFloat(currentAgeEl?.value) || 30;
+const targetAge = parseFloat(targetAgeEl?.value) || 55;
 
  const yearsAvailable = targetAge - currentAge;
  if (withdrawalRate <= 0 || yearsAvailable <= 0) return;
