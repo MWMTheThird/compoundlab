@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Compound Interest Calculator | CompoundLab</title>
+  <meta name="description" content="Use the CompoundLab compound interest calculator to estimate future value, contributions and investment growth over time." />
+  <meta property="og:title" content="Compound Interest Calculator | CompoundLab" />
+  <meta property="og:description" content="Use the CompoundLab compound interest calculator to estimate future value, contributions and investment growth over time." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#0f766e" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header class="site-header">
+  <div class="nav-container">
+    <a href="index.html" class="logo">
+<img src="assets/flask.png" alt="CompoundLab logo">
+<span class="logo-text">CompoundLab</span>
+</a>
+<div class="menu-toggle" onclick="toggleMenu()">
+ ☰
+</div>
+    <nav class="nav-links" id="navMenu">
+      <a href="index.html">Home</a>
+      <a href="compound-interest-calculator.html">Compound Interest</a>
+      <a href="investment-growth-calculator.html">Investment Growth</a>
+      <a href="savings-calculator.html">Savings</a>
+      <a href="millionaire-calculator.html">Millionaire</a>
+      <a href="isa-calculator.html">ISA</a>
+      <a href="fire-calculator.html">FIRE</a>
+      <a href="blog.html">Blog</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+
+<main>
+  <section class="page-header"><div class="container"><span class="eyebrow">Calculator</span><h1>Compound Interest Calculator</h1><p>Estimate how your money can grow through starting capital, regular monthly investing and compounding returns.</p></div></section>
+  <section class="section">
+<div class="container">
+<div class="card calculator-card">
+<div class="split">
+<div>
+<h3>Compound Interest Calculator</h3>
+<p>Use this calculator to estimate how your money can grow over time through a combination of starting capital, regular monthly investing and annual returns.</p>
+<div class="calculator-grid">
+<div class="form-group">
+<label for="compound-initial">Initial investment (£)</label>
+<input type="number" id="compound-initial" value="1000" min="0" step="100" />
+</div>
+<div class="form-group">
+<label for="compound-monthly">Monthly contribution (£)</label>
+<input type="number" id="compound-monthly" value="250" min="0" step="10" />
+</div>
+<div class="form-group">
+<label for="compound-rate">Annual return rate (%)</label>
+<input type="number" id="compound-rate" value="8" min="0" step="0.1" />
+</div>
+<div class="form-group">
+<label for="compound-years">Number of years</label>
+<input type="number" id="compound-years" value="20" min="1" step="1" />
+</div>
+</div>
+<div class="examples">
+<button type="button" class="example-btn" data-target="compound" data-initial="0" data-monthly="100" data-rate="8" data-years="10">£100/month for 10 years</button>
+<button type="button" class="example-btn" data-target="compound" data-initial="0" data-monthly="500" data-rate="8" data-years="20">£500/month for 20 years</button>
+<button type="button" class="example-btn" data-target="compound" data-initial="0" data-monthly="1000" data-rate="8" data-years="25">£1,000/month for 25 years</button>
+</div>
+</div>
+<div>
+<div class="result-panel">
+<div class="result-big" id="compound-final">£0</div>
+<p>Estimated final value at the end of the selected investment period.</p>
+<div class="result-grid">
+<div class="result-item">
+<span>Total contributions</span>
+<strong id="compound-contributions">£0</strong>
+</div>
+<div class="result-item">
+<span>Total growth</span>
+<strong id="compound-growth">£0</strong>
+</div>
+</div>
+<div class="chart-wrap">
+<canvas id="compound-chart" width="500" height="240"></canvas>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+  <section class="section section-sm"><div class="container"><div class="adsense-box"></div></div></section>
+  <section class="section"><div class="container page-grid"><div class="info-card"><span class="eyebrow">How it works</span><h2>Compound Interest Calculator</h2><p>Compound interest means your money can earn returns, and then those returns can earn returns too. Over long time periods, even modest monthly contributions can snowball into much larger totals.</p><p class="disclaimer">This calculator is for educational planning only and does not guarantee actual investment or savings returns.</p></div><div class="info-card"><span class="eyebrow">Next steps</span><h3>Keep exploring CompoundLab</h3><p>Use related tools and guides to compare different contribution levels, rates of return and time horizons.</p><div class="footer-links"><a href="compound-interest-calculator.html">Compound Interest</a><a href="investment-growth-calculator.html">Investment Growth</a><a href="savings-calculator.html">Savings</a><a href="millionaire-calculator.html">Millionaire</a><a href="blog.html">Blog & Guides</a></div></div></div></section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <div class="brand" style="margin-bottom: 14px;">
+        <span class="brand-mark">CL</span>
+        <span>CompoundLab</span>
+      </div>
+      <p>Financial calculators for investors, savers and future millionaires.</p>
+    </div>
+    <div>
+      <h3>Calculators</h3>
+      <div class="footer-links">
+        <a href="compound-interest-calculator.html">Compound Interest</a>
+        <a href="investment-growth-calculator.html">Investment Growth</a>
+        <a href="savings-calculator.html">Savings</a>
+        <a href="fire-calculator.html">FIRE</a>
+      </div>
+    </div>
+    <div>
+      <h3>Company</h3>
+      <div class="footer-links">
+        <a href="blog.html">Blog</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+      </div>
+    </div>
+    <div>
+      <h3>Resources</h3>
+<div class="footer-links">
+<span class="muted">Free financial tools</span>
+<span class="muted">Investment calculators</span>
+<span class="muted">Guides & insights</span>
+</div>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+ initCalculatorPage("compound", "growth");
+</script>
+</body>
+</html>

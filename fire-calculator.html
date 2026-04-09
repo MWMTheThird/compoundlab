@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>FIRE Calculator | CompoundLab</title>
+<meta name="description" content="Use the CompoundLab FIRE calculator to estimate your FIRE number, years to financial independence, monthly income target, and retirement readiness." />
+<meta property="og:title" content="FIRE Calculator | CompoundLab" />
+<meta property="og:description" content="Estimate your FIRE number, years to FIRE, monthly income target, and retirement readiness with CompoundLab." />
+<meta property="og:type" content="website" />
+<meta name="theme-color" content="#0f766e" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header class="site-header">
+<div class="nav-container">
+
+<a href="index.html" class="logo">
+<img src="assets/flask.png" alt="CompoundLab Logo">
+<span class="logo-text">CompoundLab</span>
+</a>
+
+<div class="menu-toggle" onclick="toggleMenu()">
+     ☰
+</div>
+
+<nav class="nav-links" id="navMenu">
+<a href="index.html">Home</a>
+<a href="compound-interest-calculator.html">Compound Interest</a>
+<a href="investment-growth-calculator.html">Investment Growth</a>
+<a href="savings-calculator.html">Savings</a>
+<a href="millionaire-calculator.html">Millionaire</a>
+<a href="isa-calculator.html">ISA</a>
+<a href="fire-calculator.html">FIRE</a>
+<a href="blog.html">Blog</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+</nav>
+
+</div>
+</header>
+<main>
+<section class="page-header">
+<div class="container">
+<span class="eyebrow">Calculator</span>
+<h1>FIRE Calculator</h1>
+<p>Estimate how long it may take to achieve financial independence and retire early.</p>
+</div>
+</section>
+<section class="section">
+<div class="container">
+<div class="card calculator-card">
+<div class="split">
+<div>
+<h3>FIRE Calculator</h3>
+<p>Model your FIRE target using expenses, investment returns, contribution rate and retirement age.</p>
+<div class="calculator">
+<div class="calculator-grid">
+<div class="form-group">
+<label for="current-age">Current Age</label>
+<input type="range" id="current-age" min="18" max="60" value="30" oninput="updateFIRE()" />
+<span id="current-age-display">30</span>
+</div>
+<div class="form-group">
+<label for="target-age">Retirement Age</label>
+<input type="range" id="target-age" min="30" max="75" value="55" oninput="updateFIRE()" />
+<span id="target-age-display">55</span>
+</div>
+<div class="form-group">
+<label for="savings">Current Savings (£)</label>
+<input type="number" id="savings" value="10000" oninput="updateFIRE()" />
+</div>
+<div class="form-group">
+<label for="monthly">Monthly Contribution (£)</label>
+<input type="number" id="monthly" value="500" oninput="updateFIRE()" />
+</div>
+<div class="form-group">
+<label for="expenses">Annual Expenses (£)</label>
+<input type="number" id="expenses" value="25000" oninput="updateFIRE()" />
+</div>
+<div class="form-group">
+<label for="rate">Expected Return (%)</label>
+<input type="number" id="rate" value="7" step="0.1" oninput="updateFIRE()" />
+</div>
+<div class="form-group">
+<label for="withdrawal-rate">Withdrawal Rate (%)</label>
+<input type="number" id="withdrawal-rate" value="4" step="0.1" oninput="updateFIRE()" />
+</div>
+<div class="form-group">
+<label for="scenario-monthly">Scenario: Extra Monthly Invest (£)</label>
+<input type="number" id="scenario-monthly" value="200" oninput="updateFIRE()" />
+</div>
+</div>
+</div>
+</div>
+<div class="result-panel">
+<div class="result-big" id="fire-number">£0</div>
+<p>Estimated FIRE target based on your annual expenses and chosen withdrawal rate.</p>
+<div class="result-grid">
+<div class="result-item">
+<span>Years to FIRE</span>
+<strong id="fire-years">0</strong>
+</div>
+<div class="result-item">
+<span>Status</span>
+<strong id="fire-status">-</strong>
+</div>
+<div class="result-item">
+<span>Monthly Income Needed</span>
+<strong id="fire-monthly-income">£0</strong>
+</div>
+<div class="result-item">
+<span>Withdrawal Rate</span>
+<strong id="fire-withdrawal-display">0%</strong>
+</div>
+<div class="result-item">
+<span>Insight</span>
+<strong id="fire-insight">-</strong>
+</div>
+<div class="result-item">
+<span>Progress to FIRE</span>
+<strong id="fire-progress">0%</strong>
+</div>
+</div>
+<canvas id="fire-chart" width="500" height="180"></canvas>
+<div class="result-grid" style="margin-top: 20px;">
+<div class="result-item">
+<span>Base Case</span>
+<strong id="fire-base-case">0 yrs</strong>
+</div>
+<div class="result-item">
+<span>With Extra Monthly Invest</span>
+<strong id="fire-scenario-case">0 yrs</strong>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="section section-sm">
+<div class="container">
+<div class="adsense-box"></div>
+</div>
+</section>
+<section class="section">
+<div class="container page-grid">
+<div class="info-card">
+<span class="eyebrow">How it works</span>
+<h2>What is FIRE?</h2>
+<p>FIRE stands for Financial Independence, Retire Early. The basic idea is to build enough invested wealth so that your portfolio can support your annual spending using a sustainable withdrawal rate.</p>
+<p>A common starting point is the 4% rule, which implies a FIRE target of roughly 25 times your annual expenses. Lower withdrawal rates mean a higher target, but often a larger margin of safety.</p>
+<p class="disclaimer">This calculator is for educational planning only and does not guarantee actual investment returns or retirement outcomes.</p>
+</div>
+<div class="info-card">
+<span class="eyebrow">Next steps</span>
+<h3>Keep exploring CompoundLab</h3>
+<p>Use related tools and guides to compare savings rates, investment returns, and long-term wealth-building scenarios.</p>
+<div class="footer-links">
+<a href="compound-interest-calculator.html">Compound Interest</a>
+<a href="investment-growth-calculator.html">Investment Growth</a>
+<a href="savings-calculator.html">Savings</a>
+<a href="millionaire-calculator.html">Millionaire</a>
+<a href="fire-calculator.html">FIRE</a>
+<a href="blog.html">Blog & Guides</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="site-footer">
+<div class="container footer-grid">
+<div>
+<div class="brand" style="margin-bottom: 14px;">
+<span class="brand-mark">CL</span>
+<span>CompoundLab</span>
+</div>
+<p>Financial calculators for investors, savers and future millionaires.</p>
+</div>
+<div>
+<h3>Calculators</h3>
+<div class="footer-links">
+<a href="compound-interest-calculator.html">Compound Interest</a>
+<a href="investment-growth-calculator.html">Investment Growth</a>
+<a href="savings-calculator.html">Savings</a>
+<a href="fire-calculator.html">FIRE</a>
+</div>
+</div>
+<div>
+<h3>Company</h3>
+<div class="footer-links">
+<a href="blog.html">Blog</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+<a href="privacy-policy.html">Privacy Policy</a>
+</div>
+</div>
+<div>
+<h3>Resources</h3>
+<div class="footer-links">
+<span class="muted">Free financial tools</span>
+<span class="muted">Investment calculators</span>
+<span class="muted">Guides & insights</span>
+</div>
+</div>
+</div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
