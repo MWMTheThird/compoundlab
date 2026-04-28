@@ -74,17 +74,19 @@ img {
   flex-shrink: 0;
 }
 
-.brand-logo,
-.logo img,
-.brand img,
-.nav-logo img,
-.site-header img {
+.brand-logo
+{
   width: 34px !important;
   height: 34px !important;
   max-width: 34px !important;
   max-height: 34px !important;
   object-fit: contain;
   display: block;
+}
+
+.brand span {
+ position: relative;
+ top: 1px;
 }
 
 .brand-mark {
