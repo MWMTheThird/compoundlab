@@ -829,3 +829,23 @@ canvas {
     font-size: 1.8rem;
   }
 }
+/* ===== FINAL HEADER LOGO OVERRIDE ===== */
+.site-header .brand {
+ display: inline-flex !important;
+ align-items: center !important;
+ gap: 8px !important;
+ line-height: 1 !important;
+}
+.site-header .brand-logo {
+ width: 28px !important;
+ height: 28px !important;
+ max-width: 28px !important;
+ max-height: 28px !important;
+ object-fit: contain !important;
+ display: block !important;
+}
+.site-header .brand span {
+ display: inline-flex !important;
+ align-items: center !important;
+ line-height: 1 !important;
+}
